@@ -98,7 +98,7 @@ Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth
         gridLine.graphics.endStroke();
         gridLines.addChild(gridLine);
         
-        fetch('../data/big18.json')
+        fetch('./data/big18.json')
         .then(response => response.json())
         .then(data => {
             var grid_data = data[i];
