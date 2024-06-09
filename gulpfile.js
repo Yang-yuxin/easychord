@@ -51,12 +51,7 @@ gulp.task( 'build:lib:concat', () =>
 	.pipe( gulp.dest( 'lib' ) )
 );
 
-gulp.task('copy:js', () =>
-    gulp.src('js/**/*.{js,json}')
-    .pipe(gulp.dest('lib/js'))
-);
-
-gulp.task( 'build:lib', gulp.parallel( 'build:lib:sync', 'build:lib:concat', 'copy:js' ) );
+gulp.task( 'build:lib', gulp.parallel( 'build:lib:sync', 'build:lib:concat' ) );
 
 gulp.task( 'build', gulp.parallel( 'build:lib' ) );
 
