@@ -1,0 +1,2549 @@
+{
+    "0": {
+        "0": {
+            "0": {
+                "row": 0,
+                "col": 0,
+                "scaledegree": 0,
+                "basetriad": 0,
+                "big18": true,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    0
+                ],
+                "text": {
+                    "main": "I",
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 0,
+                "col": 1,
+                "scaledegree": 0,
+                "basetriad": 1,
+                "big18": true,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    42
+                ],
+                "text": {
+                    "main": "ii",
+                    "sup": "4",
+                    "sub": "2",
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 0,
+                "col": 2,
+                "scaledegree": 0,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 0,
+                "col": 3,
+                "scaledegree": 0,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 0,
+                "col": 4,
+                "scaledegree": 0,
+                "basetriad": 4,
+                "big18": false,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 0,
+                "col": 5,
+                "scaledegree": 0,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 0,
+                "col": 6,
+                "scaledegree": 0,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "1": {
+            "0": {
+                "row": 1,
+                "col": 0,
+                "scaledegree": 1,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 1,
+                "col": 1,
+                "scaledegree": 1,
+                "basetriad": 1,
+                "big18": true,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    0,
+                    7
+                ],
+                "text": {
+                    "main": "ii",
+                    "sup": "(7)",
+                    "sub": null,
+                    "offsetx": 16,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 1,
+                "col": 2,
+                "scaledegree": 1,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 1,
+                "col": 3,
+                "scaledegree": 1,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 1,
+                "col": 4,
+                "scaledegree": 1,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    43
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "4",
+                    "sub": "3",
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 1,
+                "col": 5,
+                "scaledegree": 1,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 1,
+                "col": 6,
+                "scaledegree": 1,
+                "basetriad": 6,
+                "big18": true,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    6
+                ],
+                "text": {
+                    "main": "vii",
+                    "sup": "o6",
+                    "sub": null,
+                    "offsetx": 21,
+                    "offsety": null
+                }
+            }
+        },
+        "2": {
+            "0": {
+                "row": 2,
+                "col": 0,
+                "scaledegree": 2,
+                "basetriad": 0,
+                "big18": true,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    6
+                ],
+                "text": {
+                    "main": "I",
+                    "sup": "6",
+                    "sub": null,
+                    "offsetx": 10,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 2,
+                "col": 1,
+                "scaledegree": 2,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 2,
+                "col": 2,
+                "scaledegree": 2,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 2,
+                "col": 3,
+                "scaledegree": 2,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 2,
+                "col": 4,
+                "scaledegree": 2,
+                "basetriad": 4,
+                "big18": false,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 2,
+                "col": 5,
+                "scaledegree": 2,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 2,
+                "col": 6,
+                "scaledegree": 2,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "3": {
+            "0": {
+                "row": 3,
+                "col": 0,
+                "scaledegree": 3,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 3,
+                "col": 1,
+                "scaledegree": 3,
+                "basetriad": 1,
+                "big18": true,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    6,
+                    65
+                ],
+                "text": {
+                    "main": "ii",
+                    "sup": "6",
+                    "sub": "(5)",
+                    "offsetx": 16,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 3,
+                "col": 2,
+                "scaledegree": 3,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 3,
+                "col": 3,
+                "scaledegree": 3,
+                "basetriad": 3,
+                "big18": true,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    0
+                ],
+                "text": {
+                    "main": "IV",
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 3,
+                "col": 4,
+                "scaledegree": 3,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    42
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "4",
+                    "sub": "2",
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 3,
+                "col": 5,
+                "scaledegree": 3,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 3,
+                "col": 6,
+                "scaledegree": 3,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "4": {
+            "0": {
+                "row": 4,
+                "col": 0,
+                "scaledegree": 4,
+                "basetriad": 0,
+                "big18": true,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    64
+                ],
+                "text": {
+                    "main": "I",
+                    "sup": "6",
+                    "sub": "4",
+                    "offsetx": 10,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 4,
+                "col": 1,
+                "scaledegree": 4,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 4,
+                "col": 2,
+                "scaledegree": 4,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 4,
+                "col": 3,
+                "scaledegree": 4,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 4,
+                "col": 4,
+                "scaledegree": 4,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    0,
+                    7
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "(7)",
+                    "sub": null,
+                    "offsetx": 17,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 4,
+                "col": 5,
+                "scaledegree": 4,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 4,
+                "col": 6,
+                "scaledegree": 4,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "5": {
+            "0": {
+                "row": 5,
+                "col": 0,
+                "scaledegree": 5,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 5,
+                "col": 1,
+                "scaledegree": 5,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 5,
+                "col": 2,
+                "scaledegree": 5,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 5,
+                "col": 3,
+                "scaledegree": 5,
+                "basetriad": 3,
+                "big18": true,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    6
+                ],
+                "text": {
+                    "main": "IV",
+                    "sup": "6",
+                    "sub": null,
+                    "offsetx": 18,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 5,
+                "col": 4,
+                "scaledegree": 5,
+                "basetriad": 4,
+                "big18": false,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 5,
+                "col": 5,
+                "scaledegree": 5,
+                "basetriad": 5,
+                "big18": true,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    0
+                ],
+                "text": {
+                    "main": "vi",
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 5,
+                "col": 6,
+                "scaledegree": 5,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "6": {
+            "0": {
+                "row": 6,
+                "col": 0,
+                "scaledegree": 6,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    64,
+                    67,
+                    71
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 6,
+                "col": 1,
+                "scaledegree": 6,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    69,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 6,
+                "col": 2,
+                "scaledegree": 6,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    64,
+                    67,
+                    71,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 6,
+                "col": 3,
+                "scaledegree": 6,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    69,
+                    72,
+                    76
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 6,
+                "col": 4,
+                "scaledegree": 6,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    6,
+                    65
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "6",
+                    "sub": "(5)",
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 6,
+                "col": 5,
+                "scaledegree": 6,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    69,
+                    72,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 6,
+                "col": 6,
+                "scaledegree": 6,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    71,
+                    74,
+                    77,
+                    81
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        }
+    },
+    "1": {
+        "0": {
+            "0": {
+                "row": 0,
+                "col": 0,
+                "scaledegree": 0,
+                "basetriad": 0,
+                "big18": true,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    0
+                ],
+                "text": {
+                    "main": "i",
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 0,
+                "col": 1,
+                "scaledegree": 0,
+                "basetriad": 1,
+                "big18": true,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    42
+                ],
+                "text": {
+                    "main": "ii",
+                    "sup": "ø4",
+                    "sub": "2",
+                    "offsetx": 16,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 0,
+                "col": 2,
+                "scaledegree": 0,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 0,
+                "col": 3,
+                "scaledegree": 0,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 0,
+                "col": 4,
+                "scaledegree": 0,
+                "basetriad": 4,
+                "big18": false,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 0,
+                "col": 5,
+                "scaledegree": 0,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 0,
+                "col": 6,
+                "scaledegree": 0,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "1": {
+            "0": {
+                "row": 1,
+                "col": 0,
+                "scaledegree": 1,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 1,
+                "col": 1,
+                "scaledegree": 1,
+                "basetriad": 1,
+                "big18": true,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    0,
+                    7
+                ],
+                "text": {
+                    "main": "ii",
+                    "sup": "ø7",
+                    "sub": null,
+                    "offsetx": 16,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 1,
+                "col": 2,
+                "scaledegree": 1,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 1,
+                "col": 3,
+                "scaledegree": 1,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 1,
+                "col": 4,
+                "scaledegree": 1,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    64,
+                    43
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "4",
+                    "sub": "3",
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 1,
+                "col": 5,
+                "scaledegree": 1,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 1,
+                "col": 6,
+                "scaledegree": 1,
+                "basetriad": 6,
+                "big18": true,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    6
+                ],
+                "text": {
+                    "main": "vii",
+                    "sup": "o6",
+                    "sub": null,
+                    "offsetx": 21,
+                    "offsety": null
+                }
+            }
+        },
+        "2": {
+            "0": {
+                "row": 2,
+                "col": 0,
+                "scaledegree": 2,
+                "basetriad": 0,
+                "big18": true,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    6
+                ],
+                "text": {
+                    "main": "i",
+                    "sup": "6",
+                    "sub": null,
+                    "offsetx": 9,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 2,
+                "col": 1,
+                "scaledegree": 2,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 2,
+                "col": 2,
+                "scaledegree": 2,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 2,
+                "col": 3,
+                "scaledegree": 2,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 2,
+                "col": 4,
+                "scaledegree": 2,
+                "basetriad": 4,
+                "big18": false,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 2,
+                "col": 5,
+                "scaledegree": 2,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 2,
+                "col": 6,
+                "scaledegree": 2,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "3": {
+            "0": {
+                "row": 3,
+                "col": 0,
+                "scaledegree": 3,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 3,
+                "col": 1,
+                "scaledegree": 3,
+                "basetriad": 1,
+                "big18": true,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    6,
+                    65
+                ],
+                "text": {
+                    "main": "ii",
+                    "sup": "ø6",
+                    "sub": "(5)",
+                    "offsetx": 16,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 3,
+                "col": 2,
+                "scaledegree": 3,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 3,
+                "col": 3,
+                "scaledegree": 3,
+                "basetriad": 3,
+                "big18": true,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    0
+                ],
+                "text": {
+                    "main": "iv",
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 3,
+                "col": 4,
+                "scaledegree": 3,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    42
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "4",
+                    "sub": "2",
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 3,
+                "col": 5,
+                "scaledegree": 3,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 3,
+                "col": 6,
+                "scaledegree": 3,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "4": {
+            "0": {
+                "row": 4,
+                "col": 0,
+                "scaledegree": 4,
+                "basetriad": 0,
+                "big18": true,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    64
+                ],
+                "text": {
+                    "main": "i",
+                    "sup": "6",
+                    "sub": "4",
+                    "offsetx": 9,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 4,
+                "col": 1,
+                "scaledegree": 4,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 4,
+                "col": 2,
+                "scaledegree": 4,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 4,
+                "col": 3,
+                "scaledegree": 4,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 4,
+                "col": 4,
+                "scaledegree": 4,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    0,
+                    7
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "(7)",
+                    "sub": null,
+                    "offsetx": 17,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 4,
+                "col": 5,
+                "scaledegree": 4,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 4,
+                "col": 6,
+                "scaledegree": 4,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "5": {
+            "0": {
+                "row": 5,
+                "col": 0,
+                "scaledegree": 5,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 5,
+                "col": 1,
+                "scaledegree": 5,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 5,
+                "col": 2,
+                "scaledegree": 5,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 5,
+                "col": 3,
+                "scaledegree": 5,
+                "basetriad": 3,
+                "big18": true,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    6
+                ],
+                "text": {
+                    "main": "iv",
+                    "sup": "6",
+                    "sub": null,
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 5,
+                "col": 4,
+                "scaledegree": 5,
+                "basetriad": 4,
+                "big18": false,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 5,
+                "col": 5,
+                "scaledegree": 5,
+                "basetriad": 5,
+                "big18": true,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": false
+                },
+                "inversions": [
+                    0
+                ],
+                "text": {
+                    "main": "VI",
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 5,
+                "col": 6,
+                "scaledegree": 5,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        },
+        "6": {
+            "0": {
+                "row": 6,
+                "col": 0,
+                "scaledegree": 6,
+                "basetriad": 0,
+                "big18": false,
+                "notes": [
+                    60,
+                    63,
+                    67,
+                    70
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "1": {
+                "row": 6,
+                "col": 1,
+                "scaledegree": 6,
+                "basetriad": 1,
+                "big18": false,
+                "notes": [
+                    62,
+                    65,
+                    68,
+                    72
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "2": {
+                "row": 6,
+                "col": 2,
+                "scaledegree": 6,
+                "basetriad": 2,
+                "big18": false,
+                "notes": [
+                    63,
+                    67,
+                    70,
+                    74
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "3": {
+                "row": 6,
+                "col": 3,
+                "scaledegree": 6,
+                "basetriad": 3,
+                "big18": false,
+                "notes": [
+                    65,
+                    68,
+                    72,
+                    75
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "4": {
+                "row": 6,
+                "col": 4,
+                "scaledegree": 6,
+                "basetriad": 4,
+                "big18": true,
+                "notes": [
+                    67,
+                    71,
+                    74,
+                    77
+                ],
+                "legitchords": {
+                    "triad": true,
+                    "seventh": true
+                },
+                "inversions": [
+                    6,
+                    65
+                ],
+                "text": {
+                    "main": "V",
+                    "sup": "6",
+                    "sub": "(5)",
+                    "offsetx": 14,
+                    "offsety": null
+                }
+            },
+            "5": {
+                "row": 6,
+                "col": 5,
+                "scaledegree": 6,
+                "basetriad": 5,
+                "big18": false,
+                "notes": [
+                    68,
+                    72,
+                    75,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            },
+            "6": {
+                "row": 6,
+                "col": 6,
+                "scaledegree": 6,
+                "basetriad": 6,
+                "big18": false,
+                "notes": [
+                    70,
+                    73,
+                    76,
+                    79
+                ],
+                "legitchords": {
+                    "triad": false,
+                    "seventh": false
+                },
+                "inversions": [],
+                "text": {
+                    "main": null,
+                    "sup": null,
+                    "sub": null,
+                    "offsetx": null,
+                    "offsety": null
+                }
+            }
+        }
+    }
+}
