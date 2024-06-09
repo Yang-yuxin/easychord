@@ -19,12 +19,32 @@ function watch( paths, types, callback ) {
 	return watcher;
 }
 
+
+gulp.task( 'clean:dist', () =>
+	del( [ 'dist' ] )
+);
 gulp.task( 'clean:lib', () =>
 	del( [ 'lib' ] )
 );
 
-gulp.task( 'clean', gulp.parallel( 'clean:lib' ) );
+gulp.task( 'clean', gulp.parallel( 'clean:lib', 'clean:dist' ) );
 
+gulp.task('copy-data', ()  =>
+ gulp.src('easychord/data/**/*')
+	.pipe(gulp.dest('dist/data'))
+);
+
+gulp.task('copy-js', ()  =>
+ gulp.src('easychord/js/**/*')
+	.pipe(gulp.dest('dist/js'))
+);
+
+gulp.task('copy-images', ()  =>
+ gulp.src('easychord/images/**/*')
+	.pipe(gulp.dest('dist/images'))
+);
+	
+	
 gulp.task( 'build:lib:sync', () =>
 	merge(
 		gulp.src( [
@@ -53,7 +73,7 @@ gulp.task( 'build:lib:concat', () =>
 
 gulp.task( 'build:lib', gulp.parallel( 'build:lib:sync', 'build:lib:concat' ) );
 
-gulp.task( 'build', gulp.parallel( 'build:lib' ) );
+gulp.task( 'build', gulp.parallel( 'copy-data', 'copy-js', 'copy-images', 'build:lib' ) );
 
 gulp.task( 'lint:eslint', () =>
 	gulp.src( [
