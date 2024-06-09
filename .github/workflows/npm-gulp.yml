@@ -1,0 +1,33 @@
+name: NodeJS with Gulp
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: npm install
+    - name: Build project with Gulp
+      run: ./node_modules/gulp/bin/gulp.js build
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'  # Deploy only on pushes to the main branch
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # Adjust this if your build output directory is different
