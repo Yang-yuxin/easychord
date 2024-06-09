@@ -1,13 +1,13 @@
 {
-  "name": "web-piano",
+  "name": "easychord",
   "description": "web piano",
   "version": "0.0.0",
   "author": {
-    "name": "Michael New",
-    "email": "mikenew12@gmail.com"
+    "name": "Yuxin Yang",
+    "email": "yxyang2001@outlook.com"
   },
   "license": "MIT",
-  "repository": "michaelnew/web-piano",
+  "repository": "Yang-yuxin/easychord",
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.24.4",
