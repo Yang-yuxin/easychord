@@ -132,16 +132,23 @@ function key(position, note, isBlack, clickCallback) {
 	this.shape = new Shape;
 	
 	let k = this;
-	this.shape.addEventListener("mousedown", function(event) {
+	// this.shape.addEventListener("mousedown", function(event) {
+	// 	k.toggle(true);
+	// 	clickCallback(note, true);
+	// });
+
+	// this.shape.addEventListener("pressup", function(event) {
+	// 	k.toggle(false);
+	// 	clickCallback(note, false);
+	// });
+	this.shape.addEventListener("click", function(event) {
 		k.toggle(true);
 		clickCallback(note, true);
-		console.log(note);
-	});
+		setTimeout(function() {
+			k.toggle(false);
+			clickCallback(note, false);
+		}, 300); // Adjust the delay time in milliseconds (e.g., 500 ms)
 
-	this.shape.addEventListener("pressup", function(event) {
-		k.toggle(false);
-		//console.log("mouse up");
-		clickCallback(note, false);
 	});
 
 	if (isBlack) {

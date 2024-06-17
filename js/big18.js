@@ -128,11 +128,11 @@ Big18Visualizer.prototype.drawOtherButtons = function(stage) {
     text.textBaseline = "middle";
     controlBtn.addChild(controlBtnShape);
     controlBtn.addChild(text);
-    controlBtn.addEventListener("mousedown", function(event) {
-        self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
-        self.updateMajorMinor();
-        self.stage.update();
-    });
+    // controlBtn.addEventListener("mousedown", function(event) {
+    //     self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
+    //     self.updateMajorMinor();
+    //     self.stage.update();
+    // });
     controlBtn.addEventListener("click", function(event) {
         self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
         self.updateMajorMinor();
@@ -298,14 +298,14 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
         keyCtn.addChild(border);
         keyCtn.addChild(text);
         majorKeysContainer.addChild(keyCtn);
-        cell.addEventListener("mousedown", function(event) {
-            console.log("key chosen:", key);
-            self.keyOffset["major"] = index;
-            for (let child of self.gridCells["major"]) {
-                child.keyOffset = self.keyOffset["major"]*7;
-            }
-            self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
-        });
+        // cell.addEventListener("mousedown", function(event) {
+        //     console.log("key chosen:", key);
+        //     self.keyOffset["major"] = index;
+        //     for (let child of self.gridCells["major"]) {
+        //         child.keyOffset = self.keyOffset["major"]*7;
+        //     }
+        //     self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
+        // });
         cell.addEventListener("click", function(event) {
             console.log("key chosen:", key);
             self.keyOffset["major"] = index;
@@ -344,14 +344,14 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
         keyCtn.addChild(border);
         keyCtn.addChild(text);
         minorKeysContainer.addChild(keyCtn);
-        cell.addEventListener("mousedown", function(event) {
-            console.log("key chosen:", key);
-            self.keyOffset["minor"] = index;
-            for (let child of self.gridCells["minor"]) {
-                child.keyOffset = (self.keyOffset["minor"])*7+9;
-            }
-            self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
-        });
+        // cell.addEventListener("mousedown", function(event) {
+        //     console.log("key chosen:", key);
+        //     self.keyOffset["minor"] = index;
+        //     for (let child of self.gridCells["minor"]) {
+        //         child.keyOffset = (self.keyOffset["minor"])*7+9;
+        //     }
+        //     self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
+        // });
         cell.addEventListener("click", function(event) {
             console.log("key chosen:", key);
             self.keyOffset["minor"] = index;
@@ -518,18 +518,18 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
     
     // Adding an event listener to the cell
     if (this.isBig18) {
-        cell.addEventListener("mousedown", function(event) {
-            console.log("Cell clicked:", row, col);
-            console.log("self offset", self.keyOffset);
-            console.log(additionalProperties['inversions']);
-            var adj = adjust(toplaynotes, self.keyOffset);
-            cellClickCallback(adj, true);
+        // cell.addEventListener("mousedown", function(event) {
+        //     console.log("Cell clicked:", row, col);
+        //     console.log("self offset", self.keyOffset);
+        //     console.log(additionalProperties['inversions']);
+        //     var adj = adjust(toplaynotes, self.keyOffset);
+        //     cellClickCallback(adj, true);
     
-        });
-        cell.addEventListener("pressup", function(event) {
-            var adj = adjust(toplaynotes, self.keyOffset);
-            cellClickCallback(adj, false);
-        });
+        // });
+        // cell.addEventListener("pressup", function(event) {
+        //     var adj = adjust(toplaynotes, self.keyOffset);
+        //     cellClickCallback(adj, false);
+        // });
         cell.addEventListener("click", function(event) {
             console.log("Cell clicked:", row, col);
             console.log("self offset", self.keyOffset);
@@ -537,7 +537,10 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
             var adj = adjust(toplaynotes, self.keyOffset);
             cellClickCallback(adj, true);
             adj = adjust(toplaynotes, self.keyOffset);
+            setTimeout(function() {
             cellClickCallback(adj, false);
+            }, 300); // Adjust the delay time in milliseconds (e.g., 500 ms)
+            
     
         });
     }
