@@ -302,15 +302,7 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
         keyCtn.addChild(border);
         keyCtn.addChild(text);
         majorKeysContainer.addChild(keyCtn);
-        // cell.addEventListener("mousedown", function(event) {
-        //     console.log("key chosen:", key);
-        //     self.keyOffset["major"] = index;
-        //     for (let child of self.gridCells["major"]) {
-        //         child.keyOffset = self.keyOffset["major"]*7;
-        //     }
-        //     self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
-        // });
-        cell.addEventListener("click", function(event) {
+        cell.addEventListener("mousedown", function(event) {
             console.log("key chosen:", key);
             self.keyOffset["major"] = index;
             for (let child of self.gridCells["major"]) {
@@ -318,6 +310,14 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
             }
             self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
         });
+        // cell.addEventListener("click", function(event) {
+        //     console.log("key chosen:", key);
+        //     self.keyOffset["major"] = index;
+        //     for (let child of self.gridCells["major"]) {
+        //         child.keyOffset = self.keyOffset["major"]*7;
+        //     }
+        //     self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
+        // });
     });
     minorKeys.forEach((key, index) => {
         var keyCtn = new Container;
@@ -348,15 +348,7 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
         keyCtn.addChild(border);
         keyCtn.addChild(text);
         minorKeysContainer.addChild(keyCtn);
-        // cell.addEventListener("mousedown", function(event) {
-        //     console.log("key chosen:", key);
-        //     self.keyOffset["minor"] = index;
-        //     for (let child of self.gridCells["minor"]) {
-        //         child.keyOffset = (self.keyOffset["minor"])*7+9;
-        //     }
-        //     self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
-        // });
-        cell.addEventListener("click", function(event) {
+        cell.addEventListener("mousedown", function(event) {
             console.log("key chosen:", key);
             self.keyOffset["minor"] = index;
             for (let child of self.gridCells["minor"]) {
@@ -364,6 +356,14 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
             }
             self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
         });
+        // cell.addEventListener("click", function(event) {
+        //     console.log("key chosen:", key);
+        //     self.keyOffset["minor"] = index;
+        //     for (let child of self.gridCells["minor"]) {
+        //         child.keyOffset = (self.keyOffset["minor"])*7+9;
+        //     }
+        //     self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
+        // });
     });
     majorKeysContainer.x = this.grids.getChildByName("major").x - this.gridWidth / 2.5;
     minorKeysContainer.x = this.grids.getChildByName("minor").x - this.gridWidth / 2.5;
@@ -522,31 +522,31 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
     
     // Adding an event listener to the cell
     if (this.isBig18) {
-        // cell.addEventListener("mousedown", function(event) {
-        //     console.log("Cell clicked:", row, col);
-        //     console.log("self offset", self.keyOffset);
-        //     console.log(additionalProperties['inversions']);
-        //     var adj = adjust(toplaynotes, self.keyOffset);
-        //     cellClickCallback(adj, true);
-    
-        // });
-        // cell.addEventListener("pressup", function(event) {
-        //     var adj = adjust(toplaynotes, self.keyOffset);
-        //     cellClickCallback(adj, false);
-        // });
-        cell.addEventListener("click", function(event) {
+        cell.addEventListener("mousedown", function(event) {
             console.log("Cell clicked:", row, col);
             console.log("self offset", self.keyOffset);
             console.log(additionalProperties['inversions']);
             var adj = adjust(toplaynotes, self.keyOffset);
             cellClickCallback(adj, true);
-            adj = adjust(toplaynotes, self.keyOffset);
-            setTimeout(function() {
-            cellClickCallback(adj, false);
-            }, 300); // Adjust the delay time in milliseconds (e.g., 500 ms)
-            
     
         });
+        cell.addEventListener("pressup", function(event) {
+            var adj = adjust(toplaynotes, self.keyOffset);
+            cellClickCallback(adj, false);
+        });
+        // cell.addEventListener("click", function(event) {
+        //     console.log("Cell clicked:", row, col);
+        //     console.log("self offset", self.keyOffset);
+        //     console.log(additionalProperties['inversions']);
+        //     var adj = adjust(toplaynotes, self.keyOffset);
+        //     cellClickCallback(adj, true);
+        //     adj = adjust(toplaynotes, self.keyOffset);
+        //     setTimeout(function() {
+        //     cellClickCallback(adj, false);
+        //     }, 300); // Adjust the delay time in milliseconds (e.g., 500 ms)
+            
+    
+        // });
     }
     container.addChild(cell);
     if (hastext) {
