@@ -3,7 +3,10 @@ const {
     Shape,
     Text,
     EaselDropdown,
+    Touch,
 } = require( 'easeljs' ), {
+//     // Touch,
+// } = require( 'createjs' ), {
     Big18COL,
     Big18ROW,
     Big18Width,
@@ -40,6 +43,7 @@ function adjust(notes, offset) {
 
 function Big18Visualizer(stage, keyClickCallback) {
 	this.stage = stage;
+    Touch.enable(this.stage);
     this.gridHeight = 0;
     this.gridWidth = 0;
     this.grids = new Container;
