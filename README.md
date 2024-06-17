@@ -1,19 +1,25 @@
-Takes input from a computer keyboard or a midi device and lets you practice your polyrhythms.
+# EasyChord
+This is a webpage designed for learners of harmony and music theory. 
+It helps users experiment with chords and develop the ability to distinguish them.
+The grid positioning of chords follows the music theory lesson developed by Seth Monahan (https://www.youtube.com/c/SethMonahan).
 
-[Video Explanation](https://youtu.be/eCSxzV9ByZc)
-
-## Contributions
-
-Pull requests are extremely welcome. Make your PR against the `dev` branch.
+The pianovisualizer and code framework followed https://github.com/michaelnew/web-piano as reference.
 
 ## Installation
 
-If you just want to use it, [go here](https://michaelnew.github.io/web-piano)
+For using this tool, [go here](https://Yang-yuxin.github.io/web-piano).
 
-If you want to run it on your machine:
+For running on your own machine:
 
-`npm install`
+```
+npm install
+./node_modules/gulp/bin/gulp.js build
+./node_modules/gulp/bin/gulp.js webserver
+```
 
-`./node_modules/gulp/bin/gulp.js build`
+## Development
 
-`./node_modules/gulp/bin/gulp.js webserver`
+Future development plan contains:
+
+* Mobile support
+* Harmonic function type (tonic, predominant, dominant)

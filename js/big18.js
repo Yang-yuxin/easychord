@@ -133,6 +133,11 @@ Big18Visualizer.prototype.drawOtherButtons = function(stage) {
         self.updateMajorMinor();
         self.stage.update();
     });
+    controlBtn.addEventListener("click", function(event) {
+        self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
+        self.updateMajorMinor();
+        self.stage.update();
+    });
     this.stage.addChild(controlBtn);
 
     var notionText = "This is a webpage designed for learners of harmony and music theory. \n\
@@ -301,6 +306,14 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
             }
             self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
         });
+        cell.addEventListener("click", function(event) {
+            console.log("key chosen:", key);
+            self.keyOffset["major"] = index;
+            for (let child of self.gridCells["major"]) {
+                child.keyOffset = self.keyOffset["major"]*7;
+            }
+            self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
+        });
     });
     minorKeys.forEach((key, index) => {
         var keyCtn = new Container;
@@ -332,6 +345,14 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
         keyCtn.addChild(text);
         minorKeysContainer.addChild(keyCtn);
         cell.addEventListener("mousedown", function(event) {
+            console.log("key chosen:", key);
+            self.keyOffset["minor"] = index;
+            for (let child of self.gridCells["minor"]) {
+                child.keyOffset = (self.keyOffset["minor"])*7+9;
+            }
+            self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
+        });
+        cell.addEventListener("click", function(event) {
             console.log("key chosen:", key);
             self.keyOffset["minor"] = index;
             for (let child of self.gridCells["minor"]) {
@@ -508,6 +529,16 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
         cell.addEventListener("pressup", function(event) {
             var adj = adjust(toplaynotes, self.keyOffset);
             cellClickCallback(adj, false);
+        });
+        cell.addEventListener("click", function(event) {
+            console.log("Cell clicked:", row, col);
+            console.log("self offset", self.keyOffset);
+            console.log(additionalProperties['inversions']);
+            var adj = adjust(toplaynotes, self.keyOffset);
+            cellClickCallback(adj, true);
+            adj = adjust(toplaynotes, self.keyOffset);
+            cellClickCallback(adj, false);
+    
         });
     }
     container.addChild(cell);
