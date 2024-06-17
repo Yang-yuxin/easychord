@@ -4,6 +4,7 @@ const {
 		Shape,
 		Stage,
 		Text,
+		Touch,
 	} = require( 'easeljs' ),
 	{
 		Ticker
@@ -275,6 +276,7 @@ document.onkeyup = function (e) {
 // Easel.JS
 function init() {
 	stage = new Stage("demoCanvas");
+	Touch.enable(stage);
 	//stage.enableMouseOver(3); // this is expensive, so it may be better to not use it
 
 	//Ticker.timingMode = Ticker.RAF; // syncs to display, does not respect framerate value

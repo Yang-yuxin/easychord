@@ -2,8 +2,6 @@ const {
     Container,
     Shape,
     Text,
-    EaselDropdown,
-    Touch,
 } = require( 'easeljs' ), {
 //     // Touch,
 // } = require( 'createjs' ), {
@@ -43,7 +41,6 @@ function adjust(notes, offset) {
 
 function Big18Visualizer(stage, keyClickCallback) {
 	this.stage = stage;
-    Touch.enable(this.stage);
     this.gridHeight = 0;
     this.gridWidth = 0;
     this.grids = new Container;
@@ -523,9 +520,9 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
     // Adding an event listener to the cell
     if (this.isBig18) {
         cell.addEventListener("mousedown", function(event) {
-            console.log("Cell clicked:", row, col);
-            console.log("self offset", self.keyOffset);
-            console.log(additionalProperties['inversions']);
+            // console.log("Cell clicked:", row, col);
+            // console.log("self offset", self.keyOffset);
+            // console.log(additionalProperties['inversions']);
             var adj = adjust(toplaynotes, self.keyOffset);
             cellClickCallback(adj, true);
     
