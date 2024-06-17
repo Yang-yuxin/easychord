@@ -132,16 +132,16 @@ Big18Visualizer.prototype.drawOtherButtons = function(stage) {
     text.textBaseline = "middle";
     controlBtn.addChild(controlBtnShape);
     controlBtn.addChild(text);
-    // controlBtn.addEventListener("mousedown", function(event) {
-    //     self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
-    //     self.updateMajorMinor();
-    //     self.stage.update();
-    // });
-    controlBtn.addEventListener("click", function(event) {
+    controlBtn.addEventListener("mousedown", function(event) {
         self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
         self.updateMajorMinor();
         self.stage.update();
     });
+    // controlBtn.addEventListener("click", function(event) {
+    //     self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
+    //     self.updateMajorMinor();
+    //     self.stage.update();
+    // });
     this.stage.addChild(controlBtn);
 
     var notionText = "This is a webpage designed for learners of harmony and music theory. \n\
