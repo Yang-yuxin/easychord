@@ -24,7 +24,31 @@
 		<meta name="theme-color" content="#ffffff" />
 		<script src="lib/lib.js"></script>
 		<!-- <script src="js/big18.js"></script> -->
-
+		<style>
+			html, body {
+            height: 100%;
+            margin: 0;
+            /* display: flex; */
+            justify-content: center;
+            /* align-items: flex-end; */
+        }
+			.notion-text {
+				white-space: pre-line;
+				font-family: Arial, sans-serif;
+				color: white;
+				font-size: 16px;
+				line-height: 0.5;
+			}
+			.notion-text-container {
+				margin-top: -260px;
+            	text-align: center;
+        	}
+			.notion-link {
+				color: lightblue;
+				text-decoration: underline;
+				cursor: pointer; /* This will change the mouse pointer to a hand */
+			}
+		</style>
 		<script>SystemJS.import( 'app' );</script>
 	</head>
 	<body>
@@ -48,6 +72,21 @@
 
 			<!-- <span id="beatSoundLabel">beat sound:</span> -->
 			<!-- <button type="submit" id="beatSoundButton">TICK</button> -->
+			<body>
+				<div class="notion-text-container">
+					<div class="notion-text">
+						This is a webpage designed for learners of harmony and music theory. <br>
+						It helps users experiment with chords and develop the ability to distinguish them. <br>
+						The grid positioning of chords follows the music theory lesson developed by Seth Monahan.<br>
+						<span class="notion-link" onclick="openLink()">https://www.youtube.com/c/SethMonahan</span>.
+					</div>
+				</div>
+				<script>
+					function openLink() {
+						window.open("https://www.youtube.com/c/SethMonahan", "_blank");
+					}
+				</script>
+			</body>
 			<div id="footer">
 				<span class="footerLink"><a href="https://github.com/Yang-yuxin/">GitHub</a></span>
 			</div>

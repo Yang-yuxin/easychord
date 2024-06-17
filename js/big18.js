@@ -12,6 +12,7 @@ const {
     Big18TextOffsetY,
     Big18BaseTriadDictMajor,
     Big18BaseTriadDictMinor,
+    ScaleDegrees,
     keySigGap,
     keySigOffsetX,
     keySigOffsetY,
@@ -50,11 +51,42 @@ function Big18Visualizer(stage, keyClickCallback) {
     this.cellWidth = Big18Width;
     this.cellHeight = Big18Width;
 	this.keyClickCallback = keyClickCallback;
+    this.visibleGrid = "major"; // default to major
     this.drawGrid(stage, Big18ROW, Big18COL, Big18Width, Big18Width, 'black');
     this.keyOffset = {major:0, minor:0};
-	this.drawKeyGrid(stage)
-    this.updateKeyGrid(this.stage.getChildByName("majorkeys"), "major");
-    this.updateKeyGrid(this.stage.getChildByName("minorkeys"), "minor");
+	this.drawKeyColumn(stage)
+    this.drawOtherButtons(stage);
+    // Update the key grid once the key signature changes
+    this.updateMajorMinor();
+    this.updateKeyColumn(this.stage.getChildByName("majorkeys"), "major");
+    this.updateKeyColumn(this.stage.getChildByName("minorkeys"), "minor");
+    this.stage.update();
+}
+
+Big18Visualizer.prototype.updateMajorMinor= function() {
+    var btn = this.stage.getChildByName("switchBtn");
+    console.log(btn.numChildren);
+    var btnshape = btn.getChildAt(0);
+    var btntext = btn.getChildAt(1);
+    var afterSwitch = "";
+    afterSwitch += this.visibleGrid === "minor" ? "major" : "minor";
+    btntext.text =  afterSwitch;
+    if (this.visibleGrid === "major") {
+        this.grids.getChildByName("major").visible = true;
+        this.stage.getChildByName("majorkeys").visible = true;
+        this.grids.getChildByName("minor").visible = false;
+        this.stage.getChildByName("minorkeys").visible = false;
+        btnshape.graphics.beginFill("grey").drawRect(-40, -10, 80, 20);
+        btntext.color = "white";
+    }
+    else{
+        this.grids.getChildByName("major").visible = false;
+        this.stage.getChildByName("majorkeys").visible = false;
+        this.grids.getChildByName("minor").visible = true;  
+        this.stage.getChildByName("minorkeys").visible = true;
+        btnshape.graphics.beginFill("white").drawRect(-40, -10, 80, 20);
+        btntext.color = "black";
+    }
     this.stage.update();
 }
 
@@ -62,7 +94,8 @@ Big18Visualizer.prototype.getCanvasWidth = function() {
 	return this.stage.canvas.width / this.stage.scaleX;
 }
 
-Big18Visualizer.prototype.updateKeyGrid = function(keys, ind) {
+Big18Visualizer.prototype.updateKeyColumn = function(keys, ind) {
+    // Update the key grid once the key signature changes
     for (let i=0; i<keys.children.length; i++) {
         var key = keys.getChildAt(i);
         var cell = key.getChildByName("rect");
@@ -77,6 +110,43 @@ Big18Visualizer.prototype.updateKeyGrid = function(keys, ind) {
     text = key.getChildByName("text");
     text.color = "black";
 
+}
+
+Big18Visualizer.prototype.drawOtherButtons = function(stage) {
+    const self = this;
+    const controlBtn = new Container();
+    const controlBtnShape = new Shape();
+    controlBtnShape.graphics.beginFill("white").drawRect(-40, -10, 80, 20);
+    controlBtnShape.graphics.beginStroke("black").drawRect(-40, -10, 80, 20);
+    controlBtn.name = "switchBtn";
+    controlBtn.x = this.getCanvasWidth() / 2 - Big18Width * Big18COL / 2 - Big18Gap * 2.8;
+    controlBtn.y = this.grids.y + Big18Gap;
+    var afterSwitch = "";
+    afterSwitch += self.visibleGrid === "minor" ? "major" : "minor";
+    var text = new Text(afterSwitch, "20px Times New Roman", "black");
+    text.textAlign = "center";
+    text.textBaseline = "middle";
+    controlBtn.addChild(controlBtnShape);
+    controlBtn.addChild(text);
+    controlBtn.addEventListener("mousedown", function(event) {
+        self.visibleGrid = self.visibleGrid === "minor" ? "major" : "minor";
+        self.updateMajorMinor();
+        self.stage.update();
+    });
+    this.stage.addChild(controlBtn);
+
+    var notionText = "This is a webpage designed for learners of harmony and music theory. \n\
+It helps users experiment with chords and develop the ability to distinguish them. \n\
+The grid positioning of chords follows the music theory lesson developed by Seth Monahan.\n\
+(https://www.youtube.com/c/SethMonahan).";
+
+    
+    var notion = new Text(notionText, "16px Times New Roman", "white");
+    notion.textAlign = "center";
+    notion.textBaseline = "middle";
+    notion.x = this.getCanvasWidth()/2;
+    notion.y = this.grids.y+Big18Width*Big18ROW+Big18Gap*2.3;
+    // this.stage.addChild(notion);
 }
 
 Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth, cellHeight, lineColor, ) {
@@ -102,11 +172,27 @@ Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth
         .then(response => response.json())
         .then(data => {
             var grid_data = data[i];
+            // add text labels
+            var text = new Text("BASE TRIAD", "20px Times New Roman", "white");
+            text.textAlign = "center";
+            text.textBaseline = "middle";
+            text.x = Big18Width * Big18COL / 2;
+            text.y = grid.y - 2.7 * Big18Width;
+            grid.addChild(text);
+            text = new Text("SCALE DEGREE IN BASS", "20px Times New Roman", "white");
+            text.textAlign = "center";
+            text.textBaseline = "middle";
+            text.x = grid.x - 7.8 * Big18Width;
+            text.y = Big18Width * Big18ROW / 2;
+            text.rotation = -90;
+            grid.addChild(text);
             var ind = i === 0 ? "major" : "minor";
+            var suptext;
             for (let k=0; k < numRows; k++){
                 for (let j=0; j<numCols; j++){
                     this.addcell(cells, k, j, grid_data[k][j], ind, this.keyClickCallback);
                     if (k === 0) {
+                        // add x and y labels
                         var dict;
                         if (i === 0) {
                             dict = Big18BaseTriadDictMajor;
@@ -114,27 +200,32 @@ Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth
                         else {
                             dict = Big18BaseTriadDictMinor;
                         }
-                        var text = new Text(dict[j][0], "20px Times New Roman", "white");
+                        text = new Text(dict[j][0], "20px Times New Roman", "white");
                         text.textAlign = "center";
                         text.textBaseline = "middle";
                         text.x = j * cellWidth + Big18Width / 2;
                         text.y = Big18TextOffsetY - Big18Width / 2;
                         grid.addChild(text);
                         if (dict[j].length > 1) {
-                            var suptext = new Text(dict[j][1], "12px Times New Roman", "white");
+                            suptext = new Text(dict[j][1], "12px Times New Roman", "white");
                             suptext.textAlign = "center";
                             suptext.textBaseline = "middle";
                             suptext.x = text.x + Big18TextOffsetX;
                             suptext.y = text.y - Big18TextOffsetY;
                             grid.addChild(suptext);
                         }
-                        var text = new Text("BASE TRIAD", "20px Times New Roman", "white");
+                        text = new Text(ScaleDegrees[j], "20px Times New Roman", "white");
                         text.textAlign = "center";
                         text.textBaseline = "middle";
-                        text.x = Big18Width / 2 + 170;
-                        text.y = Big18TextOffsetY - Big18Width;
+                        text.x = grid.x - 7.2 * Big18Width;
+                        text.y = j * cellWidth + Big18Width / 2;
                         grid.addChild(text);
-
+                        suptext = new Text("^", "16px Times New Roman", "white");
+                        suptext.textAlign = "center";
+                        suptext.textBaseline = "middle";
+                        suptext.x = text.x;
+                        suptext.y = text.y - 1.5*Big18TextOffsetY;
+                        grid.addChild(suptext);
                     }
                 }
             }
@@ -145,24 +236,26 @@ Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth
             grid.name = "major";
         }
         else{
-            grid.name = 'minor';
+            grid.name = "minor";
         }
         grid.addChild(cells);
         grid.addChild(gridLines);
         this.grids.addChildAt(grid, i);
-    }
+        
+        }
     
     this.gridHeight = numRows * cellHeight;
     this.gridWidth = numCols * cellWidth;
 
     this.arrange(this.grids);
+    
 	this.stage.addChild(this.grids);
     // stage.addChild(grid);
     // Don't forget to update the stage
     stage.update();
 }
 
-Big18Visualizer.prototype.drawKeyGrid = function(stage) {
+Big18Visualizer.prototype.drawKeyColumn = function(stage) {
     const majorKeys = ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'];
     const majorKeysContainer = new Container;
     majorKeysContainer.name = "majorkeys";
@@ -184,13 +277,13 @@ Big18Visualizer.prototype.drawKeyGrid = function(stage) {
         text.textBaseline = "middle";
         const canvasWidth = this.getCanvasWidth();
         const canvasCenter = canvasWidth / 2;
-        let offset = canvasCenter - Big18Width * Big18COL - Big18Gap / 2 - keySigGap / 2;
-        cell.x = offset - keySigOffsetX;
+        // let offset = canvasCenter - Big18Width * Big18COL - Big18Gap / 2 - keySigGap / 2;
+        // cell.x = offset - keySigOffsetX;
         console.log(cell.x);
         cell.y = keySigGap*index+keySigOffsetY;
-        text.x = offset - keySigOffsetX;
+        // text.x = offset - keySigOffsetX;
         text.y = keySigGap*index+keySigOffsetY;
-        border.x = offset - keySigOffsetX;
+        // border.x = offset - keySigOffsetX;
         border.y = keySigGap*index+keySigOffsetY;
         border.name = "border";
         cell.name = "rect";
@@ -206,7 +299,7 @@ Big18Visualizer.prototype.drawKeyGrid = function(stage) {
             for (let child of self.gridCells["major"]) {
                 child.keyOffset = self.keyOffset["major"]*7;
             }
-            self.updateKeyGrid(self.stage.getChildByName("majorkeys"), "major");
+            self.updateKeyColumn(self.stage.getChildByName("majorkeys"), "major");
         });
     });
     minorKeys.forEach((key, index) => {
@@ -223,12 +316,12 @@ Big18Visualizer.prototype.drawKeyGrid = function(stage) {
         text.textBaseline = "middle";
         const canvasWidth = this.getCanvasWidth();
         const canvasCenter = canvasWidth / 2;
-        let offset = canvasCenter + Big18Width * Big18COL + Big18Gap / 2 + keySigGap / 2;
-        cell.x = keySigOffsetX + offset;
+        // let offset = canvasCenter + Big18Width * Big18COL + Big18Gap / 2 + keySigGap / 2;
+        // cell.x = keySigOffsetX + offset;
         cell.y = keySigGap*index+keySigOffsetY;
-        text.x = keySigOffsetX + offset;
+        // text.x = keySigOffsetX + offset;
         text.y = keySigGap*index+keySigOffsetY;
-        border.x = keySigOffsetX + offset;
+        // border.x = keySigOffsetX + offset;
         border.y = keySigGap*index+keySigOffsetY;
         border.name = "border";
         cell.name = "rect";
@@ -244,9 +337,11 @@ Big18Visualizer.prototype.drawKeyGrid = function(stage) {
             for (let child of self.gridCells["minor"]) {
                 child.keyOffset = (self.keyOffset["minor"])*7+9;
             }
-            self.updateKeyGrid(self.stage.getChildByName("minorkeys"), "minor");
+            self.updateKeyColumn(self.stage.getChildByName("minorkeys"), "minor");
         });
     });
+    majorKeysContainer.x = this.grids.getChildByName("major").x - this.gridWidth / 2.5;
+    minorKeysContainer.x = this.grids.getChildByName("minor").x - this.gridWidth / 2.5;
     stage.addChild(majorKeysContainer);
     stage.addChild(minorKeysContainer);
     stage.update();
@@ -439,11 +534,9 @@ Big18Visualizer.prototype.arrange = function (gridContainers) {
 
     let n = gridContainers.numChildren;
     let gap = Big18Gap;
-    let W = this.gridWidth * n + gap * (n-1);
-    console.log(n, W);
+    let W = this.gridWidth;
     for (let i = 0; i < n; i++){
-        const gridContainerX = canvasCenter - (W / 2) + (gap + this.gridWidth) * i;
-        console.log(gridContainerX);
+        const gridContainerX = canvasCenter - (W / 2);
         let gridContainer =  gridContainers.getChildAt(i)
         gridContainer.x = gridContainerX;
         gridContainer.y = gap * 2;
