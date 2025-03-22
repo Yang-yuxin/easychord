@@ -7,7 +7,7 @@ The pianovisualizer and code framework followed https://github.com/michaelnew/we
 
 ## Installation
 
-For using this tool, [go here](https://Yang-yuxin.github.io/web-piano).
+For using this tool, [go here](https://Yang-yuxin.github.io/easychord).
 
 For running on your own machine:
 
