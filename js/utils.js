@@ -74,7 +74,7 @@ function randomKeySignature() {
 }
 
 async function randomBig18Chord(key, mode) {
-  const response = await fetch('../data/big18.json');
+  const response = await fetch('./data/big18.json');
   const rawData = await response.json();
 
   const chordsToSelect = [];
