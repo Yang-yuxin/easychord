@@ -1,10 +1,9 @@
+const { randomKeySignature, randomBig18Chord, applyInversion, adjust } = require('./utils');
 const {
     Container,
     Shape,
     Text,
 } = require( 'easeljs' ), {
-//     // Touch,
-// } = require( 'createjs' ), {
     Big18COL,
     Big18ROW,
     Big18Width,
@@ -19,25 +18,12 @@ const {
     keySigOffsetY,
     keySigColorTrue,
     keySigColorFalse,
-} = require( './constants' );
+    majorKeys,
+    minorKeys,
+} = require( './constants' ),
+MIDI = require( 'midi' );
 
-function adjust(notes, offset) {
-    let adjustedNotes = [...notes];
-    for (let i = 0; i < adjustedNotes.length; i++){
-        adjustedNotes[i] += offset;
-    }
-    while(Math.min(...adjustedNotes) > 71) {
-        for (let i = 0; i < adjustedNotes.length; i++){
-            adjustedNotes[i] -= 12;
-        }
-    }
-    while(Math.min(...adjustedNotes) <= 55) {
-        for (let i = 0; i < adjustedNotes.length; i++){
-            adjustedNotes[i] += 12;
-        }
-    }
-    return adjustedNotes;
-}
+
 
 function Big18Visualizer(stage, keyClickCallback) {
 	this.stage = stage;
@@ -65,11 +51,10 @@ function Big18Visualizer(stage, keyClickCallback) {
 }
 
 Big18Visualizer.prototype.updateMajorMinor= function() {
-    var btn = this.stage.getChildByName("switchBtn");
-    console.log(btn.numChildren);
-    var btnshape = btn.getChildAt(0);
-    var btntext = btn.getChildAt(1);
-    var afterSwitch = "";
+    let btn = this.stage.getChildByName("switchBtn");
+    let btnshape = btn.getChildAt(0);
+    let btntext = btn.getChildAt(1);
+    let afterSwitch = "";
     afterSwitch += this.visibleGrid === "minor" ? "major" : "minor";
     btntext.text =  afterSwitch;
     if (this.visibleGrid === "major") {
@@ -141,6 +126,29 @@ Big18Visualizer.prototype.drawOtherButtons = function(stage) {
     // });
     this.stage.addChild(controlBtn);
 
+    // Add exercise button
+    const exerciseBtn = new Container();
+    const exerciseBtnShape = new Shape();
+    exerciseBtnShape.graphics.beginFill("white").drawRect(-40, -10, 80, 20);
+    exerciseBtnShape.graphics.beginStroke("black").drawRect(-40, -10, 80, 20);
+    exerciseBtn.name = "exerciseBtn";
+    exerciseBtn.x = controlBtn.x
+    exerciseBtn.y = controlBtn.y + 0.5 * Big18Gap;
+    var exerciseBtntext = new Text("Exercise", "20px Times New Roman", "black");
+    exerciseBtntext.textAlign = "center";
+    exerciseBtntext.textBaseline = "middle";
+    exerciseBtn.addChild(exerciseBtnShape);
+    exerciseBtn.addChild(exerciseBtntext);
+
+    // Add event listener to trigger exercise mode
+    exerciseBtn.addEventListener("mousedown", () => {
+        this.startExerciseMode();
+    });
+
+    this.stage.addChild(exerciseBtn);
+    this.stage.update();
+
+
     var notionText = "This is a webpage designed for learners of harmony and music theory. \n\
 It helps users experiment with chords and develop the ability to distinguish them. \n\
 The grid positioning of chords follows the music theory lesson developed by Seth Monahan.\n\
@@ -154,6 +162,197 @@ The grid positioning of chords follows the music theory lesson developed by Seth
     notion.y = this.grids.y+Big18Width*Big18ROW+Big18Gap*2.3;
     // this.stage.addChild(notion);
 }
+
+
+
+Big18Visualizer.prototype.startExerciseMode = function () {
+    const self = this;
+    const exercisePopup = new Container();
+    exercisePopup.name = "exercisePopup";
+
+    // Background for popup
+    const background = new Shape();
+    background.graphics.beginFill("rgba(255, 255, 255, 1)").drawRect(0, 10, this.getCanvasWidth(), this.stage.canvas.height / 3.6);
+    exercisePopup.addChild(background);
+
+    // Positioning base (center of screen)
+    const baseX = self.getCanvasWidth() / 2;
+    const baseY = self.stage.canvas.height / 6;
+
+    // Key signature text
+    const keySignatureText = new Text("", "24px Times New Roman", "black");
+    keySignatureText.textAlign = "center";
+    keySignatureText.textBaseline = "middle";
+    keySignatureText.x = this.getCanvasWidth() / 2;
+    keySignatureText.y = baseY - 30;
+    exercisePopup.addChild(keySignatureText);
+
+    // Countdown text
+    const countdownText = new Text("", "18px Times New Roman", "black");
+    countdownText.textAlign = "center";
+    countdownText.textBaseline = "middle";
+    countdownText.x = this.getCanvasWidth() / 2;
+    countdownText.y = baseY - 50;
+    exercisePopup.addChild(countdownText);
+     
+    // Add the "Close" button
+    const closeBtn = new Container();
+    const closeBtnShape = new Shape();
+    closeBtnShape.graphics.beginFill("white").drawRect(-40, -10, 80, 20);
+    closeBtnShape.graphics.beginStroke("black").drawRect(-40, -10, 80, 20);
+    closeBtn.name = "closeBtn";
+    closeBtn.x = this.getCanvasWidth() - 100;
+    closeBtn.y = 30;
+
+    const closeText = new Text("Close", "20px Times New Roman", "black");
+    closeText.textAlign = "center";
+    closeText.textBaseline = "middle";
+    closeBtn.addChild(closeBtnShape);
+    closeBtn.addChild(closeText);
+
+    let exerciseTimeouts = []; // Array to store timeout IDs
+    let exerciseIntervals = []; // Array to store interval IDs
+
+    // Add event listener to close the popup and stop timeouts
+    closeBtn.addEventListener("mousedown", () => {
+        // Clear all timeouts
+        exerciseTimeouts.forEach(clearTimeout);
+        exerciseIntervals.forEach(clearInterval);
+        exerciseTimeouts = []; // Reset the array
+        exerciseIntervals = []; // Reset the array
+
+        // Remove the popup
+        self.stage.removeChild(exercisePopup);
+        self.stage.update();
+    });
+
+    exercisePopup.addChild(closeBtn);
+
+    this.stage.addChild(exercisePopup);
+    var exerciseTextElements = [];
+
+    // Exercise logic
+    function showNextExercise() {
+        let keySignature = randomKeySignature();
+        console.log(keySignature);
+        // Show key signature and start countdown
+        keySignature = {key: 'D', mode: 'major'};
+        keySignatureText.text = `Key Signature: ${keySignature.key}`;
+        console.log(keySignature.key);
+
+        randomBig18Chord(keySignature.key, keySignature.mode).then((chord) => {
+            // use chord here
+            console.log(chord);
+            const { main, sup, sub, offsetx, offsety } = chord.text;
+             // Create separate Text elements for chord display
+            const ox = offsetx !== null ? offsetx : Big18TextOffsetX;
+            const oy = offsety !== null ? offsety : Big18TextOffsetY;
+            
+            
+            // Remove previous text elements
+            if (exerciseTextElements.length > 0) {
+                exerciseTextElements.forEach((textObj) => {
+                    exercisePopup.removeChild(textObj);
+                });
+            exerciseTextElements = [];
+            }
+
+            // Create main text
+            const mainText = new Text(main || "", "20px Times New Roman", "black");
+            mainText.textAlign = "center";
+            mainText.textBaseline = "middle";
+            mainText.x = baseX;
+            mainText.y = baseY;
+            exercisePopup.addChild(mainText);
+            exerciseTextElements.push(mainText);
+
+            // Create sup text (above)
+            if (sup !== null) {
+                const supText = new Text(sup, "16px Times New Roman", "black");
+                supText.textAlign = "center";
+                supText.textBaseline = "middle";
+                supText.x = baseX + ox;
+                supText.y = baseY - oy;
+                exercisePopup.addChild(supText);
+                exerciseTextElements.push(supText);
+            }
+
+            // Create sub text (below)
+            if (sub !== null) {
+                const subText = new Text(sub, "16px Times New Roman", "black");
+                subText.textAlign = "center";
+                subText.textBaseline = "middle";
+                subText.x = baseX + ox;
+                subText.y = baseY + oy;
+                exercisePopup.addChild(subText);
+                exerciseTextElements.push(subText);
+            }
+
+            
+
+        self.stage.update();
+    
+    let countdown = 1;
+    countdownText.text = `${countdown}s`;
+    self.stage.update();
+    
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownText.text = `${countdown}s`;
+        self.stage.update();
+    
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+    
+            // Play chord
+            chord.notes.forEach((note) => {
+                MIDI.noteOn(0, note, 90, 0);
+                setTimeout(() => MIDI.noteOff(0, note, 0.5), 500);
+            });
+            // Then play each note one by one (after 1s)
+            const sortedNotes = [...chord.notes].sort((a, b) => a - b);
+            sortedNotes.forEach((note, i) => {
+                const delay = 1500 + i * 600;
+                const noteTimeout = setTimeout(() => {
+                    MIDI.noteOn(0, note, 90, 0);
+                    setTimeout(() => MIDI.noteOff(0, note, 0.5), 500);
+                }, delay);
+                exerciseTimeouts.push(noteTimeout);
+            });
+    
+        // Clear previous chord text after 3s
+        const clearTextTimeout = setTimeout(() => {
+            exerciseTextElements.forEach((textObj) => {
+                exercisePopup.removeChild(textObj);
+            });
+            exerciseTextElements = [];
+            self.stage.update();
+        }, 4000);
+        exerciseTimeouts.push(clearTextTimeout);
+
+        // Play the chord again after 4s
+        const replayTimeout = setTimeout(() => {
+            chord.notes.forEach((note) => {
+                MIDI.noteOn(0, note, 90, 0);
+                setTimeout(() => MIDI.noteOff(0, note, 0.5), 500);
+            });
+        }, 4000);
+        exerciseTimeouts.push(replayTimeout);
+
+        // Show next exercise after 6s
+        const nextTimeout = setTimeout(() => {
+            showNextExercise();
+        }, 6000);
+        exerciseTimeouts.push(nextTimeout);
+    }
+    }, 1000);
+    exerciseIntervals.push(countdownInterval);
+    
+    });}
+
+    showNextExercise();
+};
+
 
 Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth, cellHeight, lineColor, ) {
     for (let i = 0; i < 2; i++) {
@@ -262,10 +461,8 @@ Big18Visualizer.prototype.drawGrid = function(stage, numRows, numCols, cellWidth
 }
 
 Big18Visualizer.prototype.drawKeyColumn = function(stage) {
-    const majorKeys = ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'];
     const majorKeysContainer = new Container;
     majorKeysContainer.name = "majorkeys";
-    const minorKeys = ['a', 'e', 'b', 'f#', 'c#', 'g#', 'd#', 'bb', 'f', 'c', 'g', 'd'];
     const minorKeysContainer = new Container;
     minorKeysContainer.name = "minorkeys";
     const self = this;
@@ -285,7 +482,6 @@ Big18Visualizer.prototype.drawKeyColumn = function(stage) {
         const canvasCenter = canvasWidth / 2;
         // let offset = canvasCenter - Big18Width * Big18COL - Big18Gap / 2 - keySigGap / 2;
         // cell.x = offset - keySigOffsetX;
-        console.log(cell.x);
         cell.y = keySigGap*index+keySigOffsetY;
         // text.x = offset - keySigOffsetX;
         text.y = keySigGap*index+keySigOffsetY;
@@ -386,9 +582,9 @@ function GridCell(grid, row, col, keyOffset, cellWidth, cellHeight, additionalPr
 
 GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperties, cellClickCallback){
     // Assuming cell creation within a loop
-    var container = new Container;
-    var cell = new Shape;
-    var hastext = false;
+    let container = new Container;
+    let cell = new Shape;
+    let hastext = false;
     if (this.isBig18) {
         cell.graphics.beginFill("rgba(256,256,256,1.0)").drawRect(0, 0, this.cellWidth, this.cellHeight);
     }
@@ -397,7 +593,7 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
     }
     cell.x = col * this.cellWidth;
     cell.y = row * this.cellHeight;
-    var text_dict = additionalProperties['text'];
+    let text_dict = additionalProperties['text'];
     if (text_dict['main'] !== null) {
         var text_container = new Container;
         var text = new Text(text_dict['main'], "28px Times New Roman", "#000000");
@@ -444,69 +640,12 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
     var seventhnotes = notes;
     triadnotes = notes.slice(0, 3);
     if (this.additionalProperties['inversions'].length > 0) {
-        switch (this.additionalProperties['inversions'][0]) {
-            case 64:
-                triadnotes[0] += 12;
-                triadnotes[1] += 12;
-                break;
-            case 6:
-                if (additionalProperties['col'] == 6){
-                    triadnotes[1] -= 12;
-                    triadnotes[2] -= 12;
-                }
-                else{
-                    triadnotes[0] += 12;
-                }
-                break;
-            case 42:
-                // seventhnotes[2] += 12;
-                // seventhnotes[1] += 12;
-                // seventhnotes[0] += 12;
-                seventhnotes[3] -= 12;
-                break;
-            case 43:
-                // seventhnotes[0] -= 12;
-                // seventhnotes[1] -= 12;
-                seventhnotes[2] -= 12;
-                seventhnotes[3] -= 12;
-                break;
-            case 65:
-                seventhnotes[1] -= 12;
-                seventhnotes[2] -= 12;
-                seventhnotes[3] -= 12;
-                break;
-            default:
-                break;
-        }
-        if (this.additionalProperties['inversions'].length > 1) {
-            switch (this.additionalProperties['inversions'][1]) {
-                case 42:
-                    // seventhnotes[2] += 12;
-                    // seventhnotes[1] += 12;
-                    // seventhnotes[0] += 12;
-                    seventhnotes[3] -= 12;
-                    break;
-                case 43:
-                    // seventhnotes[0] -= 12;
-                    // seventhnotes[1] -= 12;
-                    seventhnotes[2] -= 12;
-                    seventhnotes[3] -= 12;
-                    break;
-                case 65:
-                    seventhnotes[1] -= 12;
-                    seventhnotes[2] -= 12;
-                    seventhnotes[3] -= 12;
-                    break;
-                case 7:
-                    seventhnotes[0] -= 12;
-                    seventhnotes[1] -= 12;
-                    seventhnotes[2] -= 12;
-                    seventhnotes[3] -= 12;
-                    break;
-                default:
-                    break;
-            }
-        }
+        console.log("inversion", this.additionalProperties['inversions']);
+        let chordType = this.additionalProperties['legitchords']['seventh'] === false ? "triad" : "seventh";
+        let notesforInversion = this.additionalProperties['legitchords']['seventh'] === false ? triadnotes : seventhnotes;
+        let notesafterInversion = applyInversion(notesforInversion, this.additionalProperties['inversions'], chordType);
+        triadnotes = notesafterInversion.slice(0, 3);
+        seventhnotes = notesafterInversion;
     }
     var toplaynotes;
     if (this.additionalProperties['legitchords']['seventh'] === false) {
@@ -531,19 +670,6 @@ GridCell.prototype.initcell = function(grid, row, col, notes, additionalProperti
             var adj = adjust(toplaynotes, self.keyOffset);
             cellClickCallback(adj, false);
         });
-        // cell.addEventListener("click", function(event) {
-        //     console.log("Cell clicked:", row, col);
-        //     console.log("self offset", self.keyOffset);
-        //     console.log(additionalProperties['inversions']);
-        //     var adj = adjust(toplaynotes, self.keyOffset);
-        //     cellClickCallback(adj, true);
-        //     adj = adjust(toplaynotes, self.keyOffset);
-        //     setTimeout(function() {
-        //     cellClickCallback(adj, false);
-        //     }, 300); // Adjust the delay time in milliseconds (e.g., 500 ms)
-            
-    
-        // });
     }
     container.addChild(cell);
     if (hastext) {
@@ -564,8 +690,6 @@ Big18Visualizer.prototype.addcell = function(grid, row, col, additionalPropertie
 Big18Visualizer.prototype.arrange = function (gridContainers) {
     const canvasWidth = this.getCanvasWidth();
     const canvasCenter = canvasWidth / 2;
-    // const gridContainerWidth = numCols * cellWidth;
-    console.log(canvasWidth);
 
     let n = gridContainers.numChildren;
     let gap = Big18Gap;

@@ -98,13 +98,28 @@ PianoVisualizer.prototype.toggleKey = function(note, on) {
 PianoVisualizer.prototype.generateKeys = function(start, end) {
 	let p = 0;
 	let blackKeys = [];
+
+	// Count number of white keys first
+	let whiteKeyCount = 0;
+	for (let i = start; i <= end; i++) {
+		if (blackNotes.indexOf(i) === -1) {
+			whiteKeyCount++;
+		}
+	}
+
+	// Dynamically calculate xOffset to center the keyboard
+	const pianoWidth = whiteKeyCount * (keyWidth + keyGap);
+	const canvasCenter = this.getCanvasWidth() / 2;
+	const dynamicOffset = canvasCenter - pianoWidth / 2;
+
+
 	for (let i = start; i <= end; i++) {
 
 		let isBlack = blackNotes.indexOf(i) > -1;
 
 		if (isBlack) p--;
 
-		let k = new key(p, i, isBlack, this.keyClickCallback);
+		let k = new key(p, i, isBlack, this.keyClickCallback, dynamicOffset);
 		this.stage.addChild(k.shape);
 
 		if (isBlack) {
@@ -124,7 +139,7 @@ PianoVisualizer.prototype.generateKeys = function(start, end) {
 	}
 }
 
-function key(position, note, isBlack, clickCallback) {
+function key(position, note, isBlack, clickCallback, xOffset) {
 	this.isBlack = isBlack;
 	this.durationInBeats = 3;
 	this.currentBeat = 0;

@@ -77,4 +77,6 @@ module.exports = {
 	keySigOffsetY: 110,
 	keySigColorTrue: "rgba(256,256,256,1.0)",
 	keySigColorFalse: "rgba(150,150,150,1.0)",
+	majorKeys: ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
+	minorKeys: ['a', 'e', 'b', 'f#', 'c#', 'g#', 'd#', 'bb', 'f', 'c', 'g', 'd'],
 };
