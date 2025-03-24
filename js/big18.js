@@ -292,7 +292,7 @@ Big18Visualizer.prototype.startExerciseMode = function () {
 
         self.stage.update();
     
-    let countdown = 1;
+    let countdown = 15;
     countdownText.text = `${countdown}s`;
     self.stage.update();
     
